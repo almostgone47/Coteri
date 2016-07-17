@@ -1,5 +1,21 @@
 == README
 
+- Slim
+- Paperclip
+- Simple form
+- Dropzone js
+- Foundation
+- Kaminari paginator
+- oAuth, facebook.
+- paranoia
+
+User profile (wizard):
+- Facebook: M/F, DOB, profile pictures
+- Interested in M/F
+- Occupation
+- Interest tags (acts as taggable + rails-jquery-autocomplete)
+- 
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 

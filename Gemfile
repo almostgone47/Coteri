@@ -1,10 +1,15 @@
 source 'https://rubygems.org'
 
 #  Additional gems
+gem 'slim'
 gem 'devise'
-gem 'pundit'
+gem 'simple_form'
+gem 'foundation-rails'
 gem 'omniauth'
 gem 'omniauth-facebook'
+# gem 'paperclip'
+# gem 'kaminari'
+# gem 'paranoia'
 
 # Pre-installed gems
 gem 'rails', '4.2.6'
