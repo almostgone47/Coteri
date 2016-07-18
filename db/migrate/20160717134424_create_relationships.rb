@@ -8,10 +8,10 @@ class CreateRelationships < ActiveRecord::Migration
     	# Shows whether 'like' (1) or 'dislike' (-1) the recipient.
     	t.integer 'Relationship Type', null: false
 
-      t.timestamps null: false
+      t.timestamps null: false	
     end
 
     # Ensures only no multiple relationships between liker & likee.
-    add_index :relationships, [:user, :likee], uniqueness: true
+    add_index :relationships, [:user_id, :recipient_id], unique: true
   end
 end
