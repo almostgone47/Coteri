@@ -4,4 +4,6 @@ class User < ActiveRecord::Base
 				 # Non-default devise modules to email confirmation, lock after multiple login attempts, & oAuth.
 				 :confirmable, :lockable, :omniauthable
 
+	has_many :relationships
+	has_many :recipients, through :relationships, source :users
 end
