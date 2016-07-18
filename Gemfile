@@ -10,6 +10,7 @@ gem 'omniauth-facebook'
 # gem 'paperclip'
 # gem 'kaminari'
 # gem 'paranoia'
+gem 'mailcatcher' # To test Devise email confirmations in development on http://localhost:1080/. Bash command 'mailcatcher' to run server.
 
 # Pre-installed gems
 gem 'rails', '4.2.6'

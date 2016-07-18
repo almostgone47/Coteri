@@ -5,5 +5,5 @@ class User < ActiveRecord::Base
 				 :confirmable, :lockable, :omniauthable
 
 	has_many :relationships
-	has_many :recipients, :through => :relationships
+	has_many :recipients, through: :relationships
 end

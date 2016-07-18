@@ -1,7 +1,12 @@
 Rails.application.configure do
   
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  ## CUSTOM CONFIGS
+  # Configs for Devise to send email confirmations
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = { :address => 'localhost', port: 1025}
 
+  ## DEFAUL CONFIGS
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   config.cache_classes = false
   config.eager_load = false
   config.consider_all_requests_local       = true
