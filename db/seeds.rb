@@ -3,19 +3,17 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-# Create 1 user
-# user = User.new.tap do |u|
-#   u.email = 'email@server.com'
-#   u.password = 'hackme!'
-#   u.password_confirmation = 'hackme!'
-#   u.skip_confirmation!
-#   u.save!
-# end
+# User.destroy_all
 
-# Creates users with Faker with the password 'password'
-password="password"
+# Creates users with Faker with the defined password
+password="hunter2"
 
-User.populate 100 do |user|
-  user.email = Faker::Internet.email
-  user.encrypted_password = User.new(password :password).encrypted_password
+100.times do |i|
+	user = User.new(
+    email:                 Faker::Internet.email,
+    password:              password,
+    password_confirmation: password
+  )
+  user.skip_confirmation!
+  user.save!
 end
