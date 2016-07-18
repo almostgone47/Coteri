@@ -11,6 +11,7 @@ gem 'omniauth-facebook'
 # gem 'kaminari'
 # gem 'paranoia'
 gem 'mailcatcher' # To test Devise email confirmations in development on http://localhost:1080/. Bash command 'mailcatcher' to run server.
+gem 'faker' # To seed fake users for testing.
 
 # Pre-installed gems
 gem 'rails', '4.2.6'
