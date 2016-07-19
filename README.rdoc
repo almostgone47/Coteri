@@ -1,4 +1,9 @@
 == README
+Todo
+* Create ability to like/dislike
+* Random generate likes
+* Apply logic to group
+* Display groups
 
 - Slim
 - Paperclip

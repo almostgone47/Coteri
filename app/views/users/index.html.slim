@@ -1,7 +1,10 @@
 h1 Users
-- User.all.each do |user|
+- @users.each do |user|
 	p
 		= user.id
 		|  - 
 		= user.email
-	
+		= link_to "Delete", user, method: :delete, data: { confirm: 'Are you sure?' }
+		/  @user deletes logged in
+		/ = link_to "Like"
+		/ = link_to "Dislike"
