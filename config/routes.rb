@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   
   # Resource routes (maps HTTP verbs to controller actions automatically)
   resources :users
+  resources :relationships, only: [:create, :destroy]
 
   # regular route:
   #   get 'products/:id' => 'catalog#view'
