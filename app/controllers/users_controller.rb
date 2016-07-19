@@ -15,4 +15,5 @@ class UsersController < ApplicationController
 		flash[:message] = "User deleted"
 		redirect_to users_path
 	end
+
 end

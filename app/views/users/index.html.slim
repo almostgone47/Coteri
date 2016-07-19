@@ -6,5 +6,5 @@ h1 Users
 		= user.email
 		= link_to "Delete", user, method: :delete, data: { confirm: 'Are you sure?' }
 		/  @user deletes logged in
-		/ = link_to "Like"
+		= link_to "Like", relationships_path(likee_id: user), method: :post
 		/ = link_to "Dislike"

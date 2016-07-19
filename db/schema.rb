@@ -17,16 +17,16 @@ ActiveRecord::Schema.define(version: 20160717134424) do
   enable_extension "plpgsql"
 
   create_table "relationships", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "recipient_id"
+    t.integer  "liker_id",          null: false
+    t.integer  "likee_id",          null: false
     t.integer  "Relationship Type", null: false
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
   end
 
-  add_index "relationships", ["recipient_id"], name: "index_relationships_on_recipient_id", using: :btree
-  add_index "relationships", ["user_id", "recipient_id"], name: "index_relationships_on_user_id_and_recipient_id", unique: true, using: :btree
-  add_index "relationships", ["user_id"], name: "index_relationships_on_user_id", using: :btree
+  add_index "relationships", ["likee_id"], name: "index_relationships_on_likee_id", using: :btree
+  add_index "relationships", ["liker_id", "likee_id"], name: "index_relationships_on_liker_id_and_likee_id", unique: true, using: :btree
+  add_index "relationships", ["liker_id"], name: "index_relationships_on_liker_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
