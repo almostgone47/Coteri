@@ -8,9 +8,15 @@ Rails.application.routes.draw do
   }
   
   # Resource routes (maps HTTP verbs to controller actions automatically)
-  resources :users
+  resources :users do
+    member do
+      get :likers, :likees
+    end
+  end
+
   resources :relationships, only: [:create, :destroy]
 
+  post ':user_name/unfollow_user', to: 'relationships#unfollow_user', as: :unfollow_user
   # regular route:
   #   get 'products/:id' => 'catalog#view'
 

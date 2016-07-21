@@ -1,0 +1,10 @@
+h1 Hello
+- @user ||= current_user
+	h1 Hi
+	.stats
+		a href=likees_user_path(@user)
+			= @user.likees.count
+			liked
+		a href=likers_user_path(@user)
+			Liked by 
+			=@user.likers.count

@@ -1,7 +1,11 @@
 h1 Users
-- User.all.each do |user|
-	p
-		= user.id
-		|  - 
-		= user.email
-	
+.user-list
+	- User.all.each do |user|
+		p
+			= user.id
+			|  - 
+			= user.email
+.likes-list
+
+
+

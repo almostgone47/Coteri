@@ -11,17 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160717134424) do
+ActiveRecord::Schema.define(version: 20160721031935) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "relationships", force: :cascade do |t|
-    t.integer  "liker_id",          null: false
-    t.integer  "likee_id",          null: false
-    t.integer  "Relationship Type", null: false
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.integer  "liker_id",                                      null: false
+    t.integer  "likee_id",                                      null: false
+    t.integer  "relation_type",                                 null: false
+    t.datetime "created_at",    default: '2016-07-21 03:42:31', null: false
+    t.datetime "updated_at",    default: '2016-07-21 03:42:31', null: false
   end
 
   add_index "relationships", ["likee_id"], name: "index_relationships_on_likee_id", using: :btree

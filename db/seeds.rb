@@ -10,10 +10,10 @@ password="hunter2"
 
 100.times do |i|
 	user = User.new(
-    email:                 Faker::Internet.email,
-    password:              password,
-    password_confirmation: password
-  )
+		email:                 Faker::Internet.email,
+		password:              password,
+		password_confirmation: password
+	)
   user.skip_confirmation!
   user.save!
 end

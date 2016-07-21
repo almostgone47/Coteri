@@ -7,7 +7,7 @@ class CreateRelationships < ActiveRecord::Migration
     	t.belongs_to :liker, class_name: 'User', null: false, index: true
     	t.belongs_to :likee, class_name: 'User', null: false, index: true
     	# Represents 'like' as 1 and 'dislike' as -1.
-    	t.integer 'Relationship Type', null: false
+    	t.integer 'relation_type', null: false
 
       t.timestamps null: false	
     end

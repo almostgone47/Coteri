@@ -1,10 +1,19 @@
 h1 Users
-- @users.each do |user|
+/ - @users.each do |user|
+/ 	.user-list
+/ 		p
+/ 			= user.id
+/ 			|  - 
+/ 			= user.email
+/ 			= link_to 'Delete', user, method: :delete, data: { confirm: 'Are you sure?' }
+/ 			= link_to 'Like', relationships_path(likee_id: user.id, relation_type: 1), method: :post
+/ 			= link_to 'Dislike', relationships_path(likee_id: user.id, relation_type: -1), method: :post
+/ 			= link_to 'Deselect', relationships_path(likee_id: user.id, relation_type: 0), method: :post
+
+- @user_ids_array.each do |id|
 	p
-		= user.id
-		|  - 
-		= user.email
-		= link_to "Delete", user, method: :delete, data: { confirm: 'Are you sure?' }
-		/  @user deletes logged in
-		= link_to "Like", relationships_path(likee_id: user), method: :post
-		/ = link_to "Dislike"
+		= id
+
+/ - @user_ids_combinations.each do  |id|
+/ 	p
+/ 		= id.join(",")
