@@ -5,10 +5,10 @@ class ApplicationController < ActionController::Base
 
 def make_groups
 	# run algo on relationships to get groups.
-	@user_ids_array = []
-	User.all.each do |i|
-		@user_ids_array << i.id
-	end
+	# @user_ids_array = []
+	# User.all.each do |i|
+	# 	@user_ids_array << i.id
+	# end
 	# @user_ids_combinations = @user_ids_array.combination(6).to_a
 end
 helper_method :make_groups	
