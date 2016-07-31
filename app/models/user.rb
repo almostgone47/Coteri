@@ -11,4 +11,7 @@ class User < ActiveRecord::Base
 	has_many :likees, through: :likee_relationships, source: :likees
 	has_many :likers, through: :liker_relationships, source: :liker 
 	# :source key isn't really needed since the :likers/:likees attribute are the plurals of :liker/:likee. Added for clarity.
+
+	# Requires users must have a user_name & it must be between 4 to 16 characters.
+	validates :user_name, presence: true, length: { minimum: 4, maximum: 16 }
 end

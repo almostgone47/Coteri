@@ -4,7 +4,8 @@ Rails.application.routes.draw do
 
   # Devise user account related routes
   devise_for :users, controllers: {
-    sessions: 'users/sessions'
+    sessions: 'users/sessions',
+    registrations: 'users/regisatrations'
   }
   
   # Resource routes (maps HTTP verbs to controller actions automatically)
