@@ -1,0 +1,13 @@
+.profile-wrapper
+	= form_for @user, url: {action: "update"}, html: {multipart: true} do |f|
+		.row
+			.large-3.columns
+				.image-circle
+					= profile_avatar_select(@user)
+			.large-9.columns
+				h3.profile-username
+					= @user.user_name
+				p.profile-bio
+					= @user.bio
+				- if @user == current_user
+					= link_to 'Edit Profile', edit_profile_path(@user.user_name), class: "expanded hollow button"

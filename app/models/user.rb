@@ -14,4 +14,8 @@ class User < ActiveRecord::Base
 
 	# Requires users must have a user_name & it must be between 4 to 16 characters.
 	validates :user_name, presence: true, length: { minimum: 4, maximum: 16 }
+
+	# Adds avatar (profile) picture to user
+	has_attached_file :avatar, styles: { medium: '152x152#' }  
+	validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
 end

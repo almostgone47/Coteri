@@ -1,0 +1,13 @@
+.profile-wrapper
+	= form_for @user, url: {action: "update"}, html: {multipart: true} do |f|
+		.row
+			.large-3.columns
+				h4 Change your profile image:
+				.image-circle
+					= profile_avatar_select(@user)
+				= f.file_field :avatar, onChange: 'loadFile(event)'
+			.large-9.columns
+				h4 Update your bio:
+				= f.text_area :bio, label: false, rows: 4
+		.row
+			= f.submit "Update Profile", class: 'expanded button'

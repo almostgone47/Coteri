@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'profiles/show'
+
   root 'home#index'
 
   # Devise user account related routes
@@ -18,6 +20,12 @@ Rails.application.routes.draw do
   resources :relationships, only: [:create, :destroy]
 
   post ':user_name/unfollow_user', to: 'relationships#unfollow_user', as: :unfollow_user
+
+  # Allow custom user urls like 'coterie.com/gabe_newell' intead of 'coterie.com/users/gabe_newell'
+  get ':user_name', to: 'profiles#show', as: :profile
+  get ':user_name/edit', to: 'profiles#edit', as: :edit_profile
+  patch ':user_name/edit', to: 'profiles#update', as: :update_profile
+  
   # regular route:
   #   get 'products/:id' => 'catalog#view'
 
