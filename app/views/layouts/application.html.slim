@@ -4,14 +4,18 @@ html[lang="en"]
     meta[charset="utf-8"]
     meta[name="viewport" content="width=device-width, initial-scale=1.0"]
     title
-      = content_for?(:title) ? yield(:title) : "Untitled"
+      = content_for?(:title) ? yield(:title) : "Coteri"
   body
     = render 'layouts/navbar'
-    p.notice
-      = notice
-    p.alert
-      = alert
+    - if flash[:notice]
+      .callout
+        p.notice
+          = notice
+    - if flash[:alert]
+      .callout
+        p.alert
+          = alert
     = stylesheet_link_tag    "application"
-    = javascript_include_tag "application"
+    = javascript_include_tag "application", "https://use.fontawesome.com/83ebcda941.js"
     = csrf_meta_tags
     = yield

@@ -9,11 +9,3 @@ h1 Users
 			= link_to 'Like', relationships_path(likee_id: user.id, relation_type: 1), method: :post
 			= link_to 'Dislike', relationships_path(likee_id: user.id, relation_type: -1), method: :post
 			= link_to 'Deselect', relationships_path(likee_id: user.id, relation_type: 0), method: :post
-
-/ - @user_ids_array.each do |id|
-/ 	p
-/ 		= id
-
-/ - @user_ids_combinations.each do  |id|
-/ 	p
-/ 		= id.join(",")

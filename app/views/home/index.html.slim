@@ -1,11 +1,25 @@
-h1 Users
-.user-list
+.user-cards.transitions-enabled
 	- User.all.each do |user|
-		p
-			= user.id
-			|  - 
-			= user.email
-.likes-list
-
-
-
+		.user-card
+			.user-card_pic
+				- unless user.avatar.blank?
+					= image_tag user.avatar.url(:medium)
+				- else
+					= image_tag  'default-avatar.jpg'
+			.user-card_body
+				h5
+					- unless user.user_name.blank?
+						= link_to user.user_name, profile_path(user.user_name)
+					- else
+						= user.email
+				/ = user.bio
+			.user-card_actions.row
+				.large-6.columns
+					| Like 
+					= link_to relationships_path(likee_id: user.id, relation_type: 1), method: :post, class: 'user-card_actions, like' do
+						i.fa.fa-heart-o aria-hidden="true"
+				.large-6.columns
+					| Dislike 
+					= link_to relationships_path(likee_id: user.id, relation_type: -1), method: :post, class: 'user-card_actions, dislike' do
+						i.fa.fa-thumbs-o-down aria-hidden="true"
+				/ = link_to 'Deselect', relationships_path(likee_id: user.id, relation_type: 0), method: :post

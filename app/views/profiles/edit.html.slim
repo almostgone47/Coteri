@@ -9,5 +9,5 @@
 			.large-9.columns
 				h4 Update your bio:
 				= f.text_area :bio, label: false, rows: 4
-		.row
-			= f.submit "Update Profile", class: 'expanded button'
+				= f.submit "Update Profile", class: 'button'
+				= link_to "Delete Profile", @user, method: :delete, data: { confirm: 'Are you sure?' }, class: 'alert button'
