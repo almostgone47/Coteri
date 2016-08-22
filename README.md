@@ -1,4 +1,4 @@
-# coteri
+# Coteri
 
 **A simple Tinder-like dating website built using Rails and PostgreSQL.**
 
