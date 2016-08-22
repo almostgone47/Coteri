@@ -15,7 +15,7 @@ gem 'masonry-rails'
 # gem 'acts_as_votable'
 # gem 'acts-as-taggable-on'
 
-gem 'mailcatcher' # To test Devise email confirmations, bash command 'mailcatcher' then go to http://localhost:1080/.
+# gem 'mailcatcher' # To test Devise email confirmations, bash command 'mailcatcher' then go to http://localhost:1080/.
 gem 'faker' # To seed fake users for testing.
 
 # Pre-installed gems
