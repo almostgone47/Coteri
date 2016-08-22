@@ -31,6 +31,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'unicorn'
 # gem 'capistrano-rails', group: :development
 
+gem 'rails_12factor', group: :production
+
 group :development, :test do
   gem 'byebug'
 end
@@ -39,4 +41,6 @@ group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
 end
+
+ruby '2.3.1'
 
